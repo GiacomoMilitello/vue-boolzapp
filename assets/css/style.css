@@ -53,6 +53,9 @@
     height: calc(100% - 46px - 82px - 50px);
     overflow-y: scroll;
 }
+#chat-list li:hover {
+    background-color: rgb(244, 244, 244);
+}
 
 /* --- RIGHT --- */
 #left,

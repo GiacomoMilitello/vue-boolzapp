@@ -55,8 +55,7 @@
 
 <!-- chat list -->
                 <ul id="chat-list" class="list-unstyled">
-                    <!-- spostare .bg-body-secondary per la chat attiva in un secondo momento -->
-                    <li v-for="contact in contacts" :key="contact.name" class="d-flex align-items-start justify-content-between p-2">
+                    <li v-for="contact in contacts" :key="contact.name" @click="changeContact(contact)" :class="{ 'bg-body-secondary': currentContact === contact }" class="d-flex align-items-start justify-content-between p-2">
                         <div class="d-flex align-items-center">
                             <figure class="bg-white rounded-circle">
                                 <img class="img-fluid rounded-circle " :src="contact.avatar" :alt="contact.name">
@@ -82,10 +81,10 @@
                 <div id="head-right" class="w-100 d-flex justify-content-between">
                     <div id="headright-left" class="d-flex align-items-center">
                         <figure class="bg-white rounded-circle">
-                            <img class="img-fluid rounded-circle " src="./assets/img/michele.png" alt="">
+                            <img class="img-fluid rounded-circle " :src="currentContact.avatar" :alt="currentContact.name">
                         </figure>
                         <div class="user-info d-flex flex-column">
-                            <h5 class="name-size mb-0">Michele</h5>
+                            <h5 class="name-size mb-0">{{ currentContact.name }}</h5>
                             <p class="last-access">Ultimo accesso oggi alle 12:00</p>
                         </div>
                     </div>
@@ -99,22 +98,11 @@
 <!-- chat -->
                 <div id="chat" class="">
                     <ul class="d-flex flex-column w-100 p-5 gap-2 list-unstyled ">
-                        <li class="user-one">
-                            <p>Hai portato a spasso il cane?</p>
+                        <li v-for="message in currentContact.messages" :key="message.date" :class="message.status === 'sent' ? 'user-one' : 'user-two'">
+                            <p>{{ message.message }}</p>
                             <p class="last-access d-flex justify-content-end align-items-center gap-1">15:30
                                 <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                             </p>
-                        </li>
-                        <li class="user-one">
-                            <p>Ricordati di stendere i panni</p>
-                            <p class="last-access d-flex justify-content-end align-items-center gap-1">15:30
-                                <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
-                            </p>
-                        </li>
-                        <li class="user-two">
-                            <p>Tutto fatto!</p>
-                            <p class="last-access d-flex justify-content-end align-items-center gap-1">15:30
-                                <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                         </li>
                     </ul>
                 </div>

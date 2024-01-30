@@ -191,13 +191,18 @@ const {
                 }
               ],
             }
-          ]  
+          ], 
+          currentContact: null 
         }
     },
     created(){
-  
+      if (this.contacts && this.contacts.length > 0) {
+        this.currentContact = this.contacts[0];
+    }
     },
     methods:{
-        
+        changeContact(contact){
+          this.currentContact = contact
+        }
     }
   }).mount("#app")
