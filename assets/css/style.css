@@ -1,0 +1,99 @@
+*{
+    /* border: 1px dashed lightcoral; */
+}
+/* --- GENERAL --- */
+#app{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#0f9a83 0%, #02856f 100px, #d5d5cf 100px, #DBDAD1 100%);
+}
+#boolzapp{
+    width: 80%;
+    height: 95%;
+}
+.row{
+    --bs-gutter-x: 0;
+}
+
+/* --- LEFT --- */
+#left{
+    /* border: 1px dashed black; */
+}
+
+/* --- RIGHT --- */
+#left,
+#right{
+    height: 100%;
+    /* border: 1px dashed red; */
+}
+
+/* right head */
+#head-left,
+#head-right,
+#footer-right{
+    height: 50px;
+    background-color: #E9E9E9;
+}
+#headright-left,
+#headright-right{
+    height: 50px;
+}
+#headright-right{
+    margin-right: 15px;
+}
+.svg-color{
+    fill: #AFADAD;
+}
+.user-info{
+    margin-left: 5px;
+}
+figure{
+    width: 40px;
+    margin: 5px;
+}
+p{
+    margin: 0px;
+}
+.name-size{
+    font-size: 90%;
+}
+.last-access{
+    font-size: 75%;
+}
+
+/* right chat */
+#chat{
+    height: calc(100% - 100px);
+    background-image: url(../img/background-chat.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.user-one{
+    align-self: flex-end;
+    background-color: #DDF7BF;
+    padding: 2% 5% 1%;
+    border-radius: 10px;
+}
+.user-two{
+    align-self: flex-start;
+    background-color: white;
+    padding: 2% 5% 1%;
+    border-radius: 10px;
+}
+
+/* footer right */
+#footer-right{
+    padding: 5px 25px;
+}
+.svg-darker{
+    fill: #6D7275;
+}
+#footer-right input{
+    height: 30px;
+    width: 90%;
+}
+#footer-right input::placeholder {
+    font-size: 75%;
+    padding-left: 5px;
+}
