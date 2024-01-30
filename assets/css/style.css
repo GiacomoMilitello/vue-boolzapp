@@ -20,6 +20,40 @@
     /* border: 1px dashed black; */
 }
 
+/* new messages left */
+#new-messages{
+    background-color: #91d1ff;
+    height: 82px;
+}
+#new-messages > :first-child{
+    width: 50px;
+    aspect-ratio: 1;
+}
+#new-messages > :nth-child(2){
+    width: calc(100% - 50px);
+}
+#new-messages svg{
+    fill: #A8D7F8;
+}
+
+/* search */
+#search{
+    background-color: #fbfafa;
+    height: 46px;
+}
+#search > :first-child{
+    width: 20%;
+    height: 30px;
+}
+#search > :nth-child(2){
+    width: 80%;
+}
+/* chat list left */
+#chat-list{
+    height: calc(100% - 46px - 82px - 50px);
+    overflow-y: scroll;
+}
+
 /* --- RIGHT --- */
 #left,
 #right{
@@ -65,9 +99,9 @@ p{
 #chat{
     height: calc(100% - 100px);
     background-image: url(../img/background-chat.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat;
+    overflow-y: scroll;
 }
 .user-one{
     align-self: flex-end;
@@ -93,6 +127,7 @@ p{
     height: 30px;
     width: 90%;
 }
+#search input::placeholder,
 #footer-right input::placeholder {
     font-size: 75%;
     padding-left: 5px;

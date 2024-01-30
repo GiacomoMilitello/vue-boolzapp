@@ -20,15 +20,84 @@
             <div id="left" class="col-4 bg-white border-end">
 
 <!-- header left -->
-                <div id="head-left" class="d-flex align-items-center">
-                    <figure class="">
-                    <img class="img-fluid rounded-circle " src="./assets/img/sofia.jpeg" alt="">
-                    </figure>
-                    <h5 class="name-size mb-0">Sofia</h5>
+                <div id="head-left" class="d-flex justify-content-between ">
+                    <div class="d-flex align-items-center">
+                        <figure class="bg-white rounded-circle">
+                            <img class="img-fluid rounded-circle " src="./assets/img/sofia.png" alt="">
+                        </figure>
+                        <h5 class="name-size mb-0">Sofia</h5>
+                    </div>
+                    <div class=" d-flex justify-content-center align-items-center gap-3">
+                        <svg class="svg-color" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 512 512"><path d="M222.7 32.1c5 16.9-4.6 34.8-21.5 39.8C121.8 95.6 64 169.1 64 256c0 106 86 192 192 192s192-86 192-192c0-86.9-57.8-160.4-137.1-184.1c-16.9-5-26.6-22.9-21.5-39.8s22.9-26.6 39.8-21.5C434.9 42.1 512 140 512 256c0 141.4-114.6 256-256 256S0 397.4 0 256C0 140 77.1 42.1 182.9 10.6c16.9-5 34.8 4.6 39.8 21.5z"/></svg>
+                        <svg class="svg-color" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 512 512"><path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z"/></svg>
+                        <svg class="svg-color" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 128 512"><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                    </div>
                 </div>
 
 <!-- new messages -->
-            
+                <div id="new-messages" class="p-3 d-flex">
+                   <div class="bg-white rounded-circle d-flex align-items-center justify-content-center ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 640 512"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7l-90.2-70.7c.2-.4 .4-.9 .6-1.3c5.2-11.5 3.1-25-5.3-34.4l-7.4-8.3C497.3 319.2 480 273.9 480 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V51.2c-42.6 8.6-79 34.2-102 69.3L38.8 5.1zM406.2 416L160 222.1v4.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S115.4 416 128 416H406.2zm-40.9 77.3c12-12 18.7-28.3 18.7-45.3H320 256c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
+                   </div>
+                   <div class="ps-2 d-flex flex-column justify-content-center ">
+                        <h5 class="name-size mb-0">Ricevi notifiche di nuovi messaggi</h5>
+                        <p class="last-access">Attiva notifiche desktop</p>
+                   </div>
+                </div>
+
+<!-- search -->
+                <div id="search" class="d-flex p-2">
+                    <div class="bg-white border border-end-0 d-flex justify-content-center align-items-center">
+                        <svg class="svg-color" xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                    </div>
+                    <input type="text" class="border" placeholder="Cerca o inizia una nuova chat">
+                </div>
+
+<!-- chat list -->
+                <ul id="chat-list" class="list-unstyled">
+<!-- Michele -->
+                    <li id="" class="bg-body-secondary d-flex align-items-start justify-content-between p-2">
+                        <div class="d-flex align-items-center">
+                            <figure class="bg-white rounded-circle">
+                                <img class="img-fluid rounded-circle " src="./assets/img/michele.png" alt="">
+                            </figure>
+                            <div class="user-info d-flex flex-column">
+                                <h5 class="name-size mb-0">Michele</h5>
+                                <p class="last-access">Ultimo messaggio</p>
+                            </div>
+                        </div>
+                        <span class="last-access">12:00</span>
+                    </li>
+<!-- Fabio -->
+                    <li id="" class="d-flex align-items-start justify-content-between p-2">
+                        <div class="d-flex align-items-center">
+                            <figure class="bg-white rounded-circle">
+                                <img class="img-fluid rounded-circle " src="./assets/img/fabio.png" alt="">
+                            </figure>
+                            <div class="user-info d-flex flex-column">
+                                <h5 class="name-size mb-0">Michele</h5>
+                                <p class="last-access">Ultimo messaggio</p>
+                            </div>
+                        </div>
+                        <span class="last-access">12:00</span>
+                    </li>
+
+<!-- Claudia -->
+                    <li id="" class="d-flex align-items-start justify-content-between p-2">
+                        <div class="d-flex align-items-center">
+                            <figure class="bg-white rounded-circle">
+                                <img class="img-fluid rounded-circle " src="./assets/img/claudia.png" alt="">
+                            </figure>
+                            <div class="user-info d-flex flex-column">
+                                <h5 class="name-size mb-0">Claudia</h5>
+                                <p class="last-access">Ultimo messaggio</p>
+                            </div>
+                        </div>
+                        <span class="last-access">12:00</span>
+                    </li>
+
+                </ul>
+
             </div>
 
 
@@ -39,8 +108,8 @@
 <!-- header right -->
                 <div id="head-right" class="w-100 d-flex justify-content-between">
                     <div id="headright-left" class="d-flex align-items-center">
-                        <figure>
-                            <img class="img-fluid rounded-circle " src="./assets/img/michele.jpeg" alt="">
+                        <figure class="bg-white rounded-circle">
+                            <img class="img-fluid rounded-circle " src="./assets/img/michele.png" alt="">
                         </figure>
                         <div class="user-info d-flex flex-column">
                             <h5 class="name-size mb-0">Michele</h5>
