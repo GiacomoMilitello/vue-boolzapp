@@ -29,6 +29,49 @@ const {
   createApp({
     data(){
         return {
+          newMessage: "",
+          randomAnswer: [
+            'Come stai oggi?',
+            'Hai qualche hobby?',
+            'Mi piace leggere libri.',
+            'Il mio sport preferito è il calcio.',
+            'Sto imparando a suonare la chitarra.',
+            'Hai mai visitato la Moldavia?',
+            'Mi piace molto la musica rock.',
+            'Hai animali domestici?',
+            'Mi piace viaggiare.',
+            'Qual è il tuo film preferito?',
+            'Hai mai provato a fare yoga?',
+            'Mi piace andare in bicicletta.',
+            'Hai mai visitato la Francia?',
+            'Mi piace molto il gelato.',
+            'Qual è il tuo libro preferito?',
+            'Mi piace molto il caffè.',
+            'Hai mai provato a fare meditazione?',
+            'Mi piace molto la pizza.',
+            'Hai mai visitato la Spagna?',
+            'Mi piace molto il cioccolato.',
+            'Qual è la tua canzone preferita?',
+            'Mi piace molto il tè.',
+            'Hai mai provato a fare pilates?',
+            'Mi piace molto il sushi.',
+            'Hai mai visitato il Giappone?',
+            'Mi piace molto la pasta.',
+            'Qual è il tuo sport preferito?',
+            'Mi piace molto il vino.',
+            'Hai mai provato a fare jogging?',
+            'Mi piace molto la birra.',
+            'Hai mai visitato la Germania?',
+            'Mi piace molto il pane.',
+            'Qual è il tuo colore preferito?',
+            'Mi piace molto la marmellata.',
+            'Hai mai provato a fare nuoto?',
+            'Mi piace molto la torta.',
+            'Hai mai visitato la Spagna?',
+            'Mi piace molto il formaggio.',
+            'Qual è il tuo dessert preferito?',
+            'Qual è il tuo cibo preferito?',
+          ],
           contacts: [
             {
               name: 'Michele',
@@ -201,8 +244,33 @@ const {
     }
     },
     methods:{
-        changeContact(contact){
-          this.currentContact = contact
+      addMessage() {
+        if (this.newMessage.trim() !== "") {
+          let currentDate = new Date();
+          let formattedDate = currentDate.getDate() + "/"
+                            + (currentDate.getMonth()+1) + "/"
+                            + currentDate.getFullYear() + " "
+                            + currentDate.getHours() + ":"
+                            + currentDate.getMinutes() + ":"
+                            + currentDate.getSeconds();
+          this.currentContact.messages.push({
+            date: formattedDate,
+            message: this.newMessage,
+            status: 'sent'
+          });
+          this.newMessage = "";
+          setTimeout(() => {
+            let randomIndex = Math.floor(Math.random() * this.randomAnswer.length);
+            this.currentContact.messages.push({
+              date: formattedDate,
+              message: this.randomAnswer[randomIndex],
+              status: 'received'
+            });
+          }, 1000);
         }
+      },
+      changeContact(contact){
+        this.currentContact = contact
+      }
     }
   }).mount("#app")

@@ -111,12 +111,14 @@ p{
     background-color: #DDF7BF;
     padding: 2% 5% 1%;
     border-radius: 10px;
+    /* width: 45%; */
 }
 .user-two{
     align-self: flex-start;
     background-color: white;
     padding: 2% 5% 1%;
     border-radius: 10px;
+    /* width: 45%; */
 }
 
 /* footer right */
