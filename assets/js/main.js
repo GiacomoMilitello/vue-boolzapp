@@ -316,5 +316,21 @@ const {
       removeMessage(message) {
         message.visible = false;
       },
+      getLastVisibleMessage(contact) {
+        for (let i = contact.messages.length - 1; i >= 0; i--) {
+          if (contact.messages[i].visible) {
+            return contact.messages[i].message;
+          }
+        }
+        return '';
+      },
+      getLastVisibleMessageDate(contact) {
+        for (let i = contact.messages.length - 1; i >= 0; i--) {
+          if (contact.messages[i].visible) {
+            return contact.messages[i].date;
+          }
+        }
+        return '';
+      }
     }
   }).mount("#app")

@@ -75,10 +75,10 @@
                                 </figure>
                                 <div class="user-info d-flex flex-column">
                                     <h5 class="name-size mb-0">{{ contact.name }}</h5>
-                                    <p class="last-access">{{ contact.messages[contact.messages.length -1].message}}</p>
+                                    <p class="last-access">{{ getLastVisibleMessage(contact) }}</p>
                                 </div>
                             </div>
-                            <span class="last-access pe-2">{{ formatTime(contact.messages[contact.messages.length -1].date) }}</span>
+                            <span class="last-access pe-2">{{ formatTime(getLastVisibleMessageDate(contact)) }}</span>
                         </div>
                         
                     </li>
