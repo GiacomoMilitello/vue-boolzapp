@@ -100,7 +100,7 @@
                         </figure>
                         <div class="user-info d-flex flex-column">
                             <h5 class="name-size mb-0">{{ currentContact.name }}</h5>
-                            <p class="last-access">Ultimo accesso oggi alle 12:00</p>
+                            <p class="last-access">Ultimo accesso oggi alle {{ formatTime(currentContact.messages.filter(message => message.status === 'received').slice(-1)[0].date) }}</p>
                         </div>
                     </div>
                     <div id="headright-right" class=" d-flex justify-content-center align-items-center gap-3">
@@ -113,11 +113,8 @@
 <!-- chat -->
                 <div id="chat" class="">
                     <ul class="d-flex flex-column w-100 p-5 gap-2 list-unstyled ">
-                        <li
-                        v-for="message in currentContact.messages" :key="message.date" 
-                        :class="message.status === 'sent' ? 'user-one' : 'user-two'" 
-                        :class="{ 'd-none': !message.visible }" 
-                        class="d-flex ">
+                        <li v-for="message in currentContact.messages" :key="message.date" 
+                        :class="[message.status === 'sent' ? 'user-one' : 'user-two', { 'd-none': !message.visible, 'd-flex': message.visible }]">
                             <div class="pt-1">
                                 <p>{{ message.message }}</p>
                                 <p class="last-access d-flex justify-content-end align-items-center gap-1"> {{ formatTime(message.date) }}
@@ -129,7 +126,7 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                   <li><a class="dropdown-item" href="#">Info</a></li>
-                                  <li><a class="dropdown-item" href="#">delete this message</a></li>
+                                  <li @click="removeMessage(message)"><a class="dropdown-item" href="#" >delete this message</a></li>
                                 </ul>
                               </div>
                         </li>
