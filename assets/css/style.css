@@ -109,14 +109,14 @@ p{
 .user-one{
     align-self: flex-end;
     background-color: #DDF7BF;
-    padding: 2% 5% 1%;
+    padding: 0 5px 1% 5%;
     border-radius: 10px;
     /* width: 45%; */
 }
 .user-two{
     align-self: flex-start;
     background-color: white;
-    padding: 2% 5% 1%;
+    padding: 0 5px 1% 5%;
     border-radius: 10px;
     /* width: 45%; */
 }
@@ -136,4 +136,22 @@ p{
 #footer-right input::placeholder {
     font-size: 75%;
     padding-left: 5px;
+}
+
+
+.dropdown-toggle.btn {
+    border: none;
+    padding: 0;
+    margin-left: 5px;
+    position: relative;
+    top: -5px;
+}
+
+.dropdown-toggle.btn:hover {
+    color: gray;
+}
+
+.dropdown-toggle.btn:focus {
+    box-shadow: none;
+    outline: none;
 }

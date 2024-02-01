@@ -29,7 +29,8 @@ const {
   createApp({
     data(){
         return {
-          newMessage: "",
+          searchText: '',
+          newMessage: '',
           randomAnswer: [
             'Come stai oggi?',
             'Hai qualche hobby?',
@@ -244,33 +245,54 @@ const {
     }
     },
     methods:{
+      generateDate(){
+        let DateTime = luxon.DateTime;
+        const now = DateTime.local();
+        const formattedDatetime = now.toFormat('dd/MM/yyyy HH:mm:ss');
+        return formattedDatetime
+      },
+      formatTime(dateString){
+        let DateTime = luxon.DateTime;
+        const date = DateTime.fromFormat(dateString, 'dd/MM/yyyy HH:mm:ss');
+        const formattedTime = date.toFormat('HH:mm');
+        return formattedTime;
+      },
       addMessage() {
         if (this.newMessage.trim() !== "") {
-          let currentDate = new Date();
-          let formattedDate = currentDate.getDate() + "/"
-                            + (currentDate.getMonth()+1) + "/"
-                            + currentDate.getFullYear() + " "
-                            + currentDate.getHours() + ":"
-                            + currentDate.getMinutes() + ":"
-                            + currentDate.getSeconds();
-          this.currentContact.messages.push({
-            date: formattedDate,
+          this.currentContact.messages.push(
+            {
+            date: this.generateDate(),
             message: this.newMessage,
-            status: 'sent'
-          });
+            status: 'sent',
+            visible: true
+            }
+          );
           this.newMessage = "";
           setTimeout(() => {
             let randomIndex = Math.floor(Math.random() * this.randomAnswer.length);
             this.currentContact.messages.push({
-              date: formattedDate,
+              date: this.generateDate(),
               message: this.randomAnswer[randomIndex],
-              status: 'received'
+              status: 'received',
+              visible: true
             });
           }, 1000);
         }
       },
       changeContact(contact){
         this.currentContact = contact
-      }
+      },
+      searchContact(){
+        this.contacts.forEach( (contact) => {
+          if( contact.name.toLowerCase().includes( this.searchText.toLowerCase() ) ){
+            contact.visible = true
+          } else {
+            contact.visible = false
+          }
+        })
+      },
+      deleteMessage(message) {
+        message.visible = false;
+    },
     }
   }).mount("#app")
